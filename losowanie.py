@@ -4,15 +4,17 @@ import random
 app = Flask(__name__)
 
 
-@app.route("/hello/<a>", methods=['GET'])
-def hello(a):
+@app.route("/hello/<abc>", methods=['GET'])
+def hello(abc):
     l = []
-    a = 5
-    a = int(a + 1)
-    for i in range(1, a):
-        abc = random.randint(1, 10)
-        l.append(abc)
+    if abc in [l]:
+        l.pop()
+    else:
+        for i in range(1, 7):
+            abc = random.randint(1, 49)
+            l.append(abc)
     return f'Wynik: {l}'
+
 
 
 if __name__ == "__main__":
